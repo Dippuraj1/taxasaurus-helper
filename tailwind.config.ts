@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -13,7 +12,11 @@ export default {
 	theme: {
 		container: {
 			center: true,
-			padding: '2rem',
+			padding: {
+				DEFAULT: '2rem',
+				sm: '2.5rem',
+				lg: '4rem'
+			},
 			screens: {
 				'2xl': '1400px'
 			}
@@ -63,7 +66,14 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Tax application specific colors
+				metly: {
+					yellow: '#FFD100',
+					black: '#121418',
+					lightPurple: '#CDCEFF',
+					beige: '#F2D3BF',
+					darkGray: '#222222',
+					white: '#FFFFFF',
+				},
 				tax: {
 					primary: '#0070f3',
 					secondary: '#00a86b',
@@ -77,6 +87,9 @@ export default {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
+			},
+			fontFamily: {
+				sans: ['Inter', 'sans-serif'],
 			},
 			keyframes: {
 				'accordion-down': {

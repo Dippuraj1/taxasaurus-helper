@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { FileText, Menu, X } from "lucide-react";
+import { FileText, Menu, X, Download } from "lucide-react";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -17,22 +17,22 @@ const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-white">
-      <div className="container flex h-16 items-center justify-between px-4 md:px-6">
+    <header className="sticky top-0 z-50 w-full bg-metly-black text-white">
+      <div className="metly-container flex h-16 items-center justify-between">
         <div className="flex items-center gap-2">
-          <Link to="/" className="flex items-center gap-2 text-xl font-bold text-tax-primary">
+          <Link to="/" className="flex items-center gap-2 text-xl font-bold text-metly-yellow">
             <FileText className="h-6 w-6" />
             <span>Taxasaurus</span>
           </Link>
         </div>
         
-        <nav className="hidden md:flex md:items-center md:gap-5">
-          <Link to="/" className="text-sm font-medium hover:text-tax-primary">
+        <nav className="hidden md:flex md:items-center md:gap-8">
+          <Link to="/" className="text-sm font-medium hover:text-metly-yellow transition-colors">
             Home
           </Link>
           <a 
             href="#features" 
-            className="text-sm font-medium hover:text-tax-primary cursor-pointer"
+            className="text-sm font-medium hover:text-metly-yellow transition-colors cursor-pointer"
             onClick={(e) => {
               e.preventDefault();
               scrollToSection('features');
@@ -42,7 +42,7 @@ const Header = () => {
           </a>
           <a 
             href="#pricing" 
-            className="text-sm font-medium hover:text-tax-primary cursor-pointer"
+            className="text-sm font-medium hover:text-metly-yellow transition-colors cursor-pointer"
             onClick={(e) => {
               e.preventDefault();
               scrollToSection('pricing');
@@ -52,7 +52,7 @@ const Header = () => {
           </a>
           <a 
             href="#contact" 
-            className="text-sm font-medium hover:text-tax-primary cursor-pointer"
+            className="text-sm font-medium hover:text-metly-yellow transition-colors cursor-pointer"
             onClick={(e) => {
               e.preventDefault();
               scrollToSection('contact');
@@ -63,18 +63,21 @@ const Header = () => {
         </nav>
         
         <div className="hidden md:flex md:items-center md:gap-4">
-          <Button variant="ghost" onClick={() => navigate("/auth")}>
+          <Button variant="ghost" className="text-white hover:text-metly-yellow hover:bg-metly-black/20" onClick={() => navigate("/auth")}>
             Sign In
           </Button>
-          <Button className="bg-tax-primary hover:bg-tax-primary/90" onClick={() => navigate("/auth")}>
-            Get Started
+          <Button 
+            className="bg-metly-yellow text-metly-black hover:bg-metly-yellow/90 rounded-full" 
+            onClick={() => navigate("/auth")}
+          >
+            <Download className="mr-2 h-4 w-4" /> Download App
           </Button>
         </div>
         
         <Button
           variant="ghost"
           size="icon"
-          className="md:hidden"
+          className="md:hidden text-white"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           <span className="sr-only">Toggle menu</span>
@@ -87,18 +90,18 @@ const Header = () => {
       </div>
       
       {mobileMenuOpen && (
-        <div className="container py-4 md:hidden">
+        <div className="metly-container py-4 md:hidden bg-metly-black">
           <nav className="flex flex-col space-y-4">
             <Link
               to="/"
-              className="text-sm font-medium hover:text-tax-primary"
+              className="text-sm font-medium hover:text-metly-yellow"
               onClick={() => setMobileMenuOpen(false)}
             >
               Home
             </Link>
             <a
               href="#features"
-              className="text-sm font-medium hover:text-tax-primary"
+              className="text-sm font-medium hover:text-metly-yellow"
               onClick={(e) => {
                 e.preventDefault();
                 scrollToSection('features');
@@ -108,7 +111,7 @@ const Header = () => {
             </a>
             <a
               href="#pricing"
-              className="text-sm font-medium hover:text-tax-primary"
+              className="text-sm font-medium hover:text-metly-yellow"
               onClick={(e) => {
                 e.preventDefault();
                 scrollToSection('pricing');
@@ -118,7 +121,7 @@ const Header = () => {
             </a>
             <a
               href="#contact"
-              className="text-sm font-medium hover:text-tax-primary"
+              className="text-sm font-medium hover:text-metly-yellow"
               onClick={(e) => {
                 e.preventDefault();
                 scrollToSection('contact');
@@ -129,7 +132,7 @@ const Header = () => {
             <div className="flex flex-col gap-2 pt-4">
               <Button 
                 variant="ghost" 
-                className="w-full justify-center"
+                className="w-full justify-center text-white hover:text-metly-yellow hover:bg-metly-black/20"
                 onClick={() => {
                   setMobileMenuOpen(false);
                   navigate("/auth");
@@ -138,13 +141,13 @@ const Header = () => {
                 Sign In
               </Button>
               <Button 
-                className="w-full justify-center bg-tax-primary hover:bg-tax-primary/90"
+                className="w-full justify-center bg-metly-yellow text-metly-black hover:bg-metly-yellow/90 rounded-full"
                 onClick={() => {
                   setMobileMenuOpen(false);
                   navigate("/auth");
                 }}
               >
-                Get Started
+                <Download className="mr-2 h-4 w-4" /> Download App
               </Button>
             </div>
           </nav>

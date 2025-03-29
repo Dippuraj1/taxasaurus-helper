@@ -11,37 +11,37 @@ import {
 const Features = () => {
   const features = [
     {
-      icon: <Bot className="h-8 w-8 text-tax-primary" />,
+      icon: <Bot className="h-8 w-8 text-metly-yellow" />,
       title: "AI-Powered Filing",
       description:
         "Our Claude AI assistant guides you through every step of the tax filing process.",
     },
     {
-      icon: <Shield className="h-8 w-8 text-tax-secondary" />,
+      icon: <Shield className="h-8 w-8 text-metly-yellow" />,
       title: "100% Secure",
       description:
         "End-to-end encryption and compliance with GDPR & DPDP standards.",
     },
     {
-      icon: <FileText className="h-8 w-8 text-tax-accent" />,
+      icon: <FileText className="h-8 w-8 text-metly-yellow" />,
       title: "Smart Forms",
       description:
         "AI auto-fills your tax forms based on uploaded documents and prior filings.",
     },
     {
-      icon: <BarChart4 className="h-8 w-8 text-tax-primary" />,
+      icon: <BarChart4 className="h-8 w-8 text-metly-yellow" />,
       title: "Tax Optimization",
       description:
         "Intelligent suggestions to maximize your deductions and minimize tax liability.",
     },
     {
-      icon: <Upload className="h-8 w-8 text-tax-secondary" />,
+      icon: <Upload className="h-8 w-8 text-metly-yellow" />,
       title: "Document Storage",
       description:
         "Secure storage of all your tax-related documents with Digilocker integration.",
     },
     {
-      icon: <Lock className="h-8 w-8 text-tax-accent" />,
+      icon: <Lock className="h-8 w-8 text-metly-yellow" />,
       title: "Government Certified",
       description:
         "Authorized integration with official CBDT APIs for direct filing.",
@@ -49,11 +49,11 @@ const Features = () => {
   ];
 
   return (
-    <section id="features" className="bg-white py-16">
-      <div className="container px-4 md:px-6">
+    <section id="features" className="bg-metly-black py-16 text-white">
+      <div className="metly-container">
         <div className="mb-12 text-center">
           <h2 className="mb-2 text-3xl font-bold md:text-4xl">Why Choose Taxasaurus?</h2>
-          <p className="mx-auto max-w-[700px] text-gray-500 md:text-lg">
+          <p className="mx-auto max-w-[700px] text-gray-300 md:text-lg">
             Simplify your tax filing with our comprehensive suite of AI-powered tools.
           </p>
         </div>
@@ -61,11 +61,11 @@ const Features = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="tax-feature-card flex flex-col items-start space-y-3 bg-white"
+              className="flex flex-col items-start space-y-3 bg-gray-900 rounded-2xl p-6 transition-transform duration-300 hover:transform hover:scale-105"
             >
-              <div className="rounded-lg bg-gray-50 p-3">{feature.icon}</div>
-              <h3 className="text-xl font-bold">{feature.title}</h3>
-              <p className="text-gray-500">{feature.description}</p>
+              <div className="rounded-lg bg-gray-800 p-3">{feature.icon}</div>
+              <h3 className="text-xl font-bold text-white">{feature.title}</h3>
+              <p className="text-gray-300">{feature.description}</p>
             </div>
           ))}
         </div>

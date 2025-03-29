@@ -90,7 +90,11 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans font-bold tracking-tight;
   }
 }
 
@@ -105,5 +109,21 @@
 
   .tax-glass-panel {
     @apply bg-white bg-opacity-80 backdrop-blur-md rounded-xl shadow-md;
+  }
+  
+  .metly-container {
+    @apply px-5 md:px-10 lg:px-20 max-w-7xl mx-auto;
+  }
+  
+  .metly-card {
+    @apply rounded-2xl overflow-hidden transition-all duration-300;
+  }
+  
+  .metly-button {
+    @apply bg-metly-yellow text-metly-black font-medium px-6 py-3 rounded-full hover:opacity-90 transition-all;
+  }
+  
+  .metly-text-gradient {
+    @apply bg-gradient-to-r from-metly-yellow to-amber-400 bg-clip-text text-transparent;
   }
 }
