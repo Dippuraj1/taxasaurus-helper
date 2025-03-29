@@ -1,6 +1,6 @@
 
 import { LucideProps } from 'lucide-react';
-import React from 'react';
+import * as React from 'react';
 
 export interface FileTextProps extends LucideProps {}
 
