@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { Google, FileText, User } from "lucide-react";
+import { Mail, FileText, User } from "lucide-react";
 
 const AuthButtons = () => {
   return (
@@ -19,7 +19,7 @@ const AuthButtons = () => {
               Sign Up with Email
             </Button>
             <Button variant="outline" className="w-full justify-center gap-2">
-              <Google className="h-4 w-4" />
+              <Mail className="h-4 w-4" />
               Continue with Google
             </Button>
             <Button variant="outline" className="w-full justify-center gap-2">
