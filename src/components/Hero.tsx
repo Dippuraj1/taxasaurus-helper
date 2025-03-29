@@ -169,7 +169,7 @@ const Hero = () => {
           <div className="mt-8 lg:mt-0 lg:w-2/5 relative h-full flex items-end">
             <div className="h-[75%] w-full flex items-end">
               <img 
-                src="/lovable-uploads/6391989a-e11a-4965-9132-5cd2cd8cd66b.png" 
+                src="/lovable-uploads/d3de3271-65da-45f6-86a3-7a5b67306e10.png" 
                 alt="Lego figure with top hat and mustache" 
                 className="object-contain w-full max-w-md mx-auto"
               />
