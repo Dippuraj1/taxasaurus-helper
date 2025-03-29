@@ -127,3 +127,9 @@
     @apply bg-gradient-to-r from-metly-yellow to-amber-400 bg-clip-text text-transparent;
   }
 }
+
+/* Add smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+

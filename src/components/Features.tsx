@@ -50,7 +50,7 @@ const Features = () => {
 
   return (
     <section id="features" className="bg-metly-black py-16 text-white">
-      <div className="metly-container">
+      <div className="metly-container px-5 md:px-[30px]">
         <div className="mb-12 text-center">
           <h2 className="mb-2 text-3xl font-bold md:text-4xl">Why Choose Taxasaurus?</h2>
           <p className="mx-auto max-w-[700px] text-gray-300 md:text-lg">

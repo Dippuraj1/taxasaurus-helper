@@ -3,9 +3,6 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, BarChart4, MessageSquare } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 
 const Hero = () => {
@@ -34,7 +31,7 @@ const Hero = () => {
   
   return (
     <section className="bg-metly-yellow py-20">
-      <div className="metly-container">
+      <div className="metly-container px-5 md:px-[30px]">
         <div className="flex flex-col lg:flex-row lg:items-center lg:gap-8">
           <div className="flex flex-col justify-center space-y-6 lg:w-3/5">
             <div className="space-y-2">
@@ -71,7 +68,7 @@ const Hero = () => {
         </div>
       </div>
       
-      <div className="metly-container mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="metly-container mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-5 md:px-[30px]">
         <div className="bg-metly-black rounded-2xl p-6 text-white">
           <div className="flex justify-between items-center mb-4">
             <p className="text-sm font-medium">Track Sales</p>

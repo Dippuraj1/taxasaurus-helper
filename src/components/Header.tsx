@@ -18,7 +18,7 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-metly-black text-white">
-      <div className="metly-container flex h-16 items-center justify-between">
+      <div className="metly-container flex h-16 items-center justify-between px-5 md:px-[30px]">
         <div className="flex items-center gap-2">
           <Link to="/" className="flex items-center gap-2 text-xl font-bold text-metly-yellow">
             <FileText className="h-6 w-6" />
@@ -90,7 +90,7 @@ const Header = () => {
       </div>
       
       {mobileMenuOpen && (
-        <div className="metly-container py-4 md:hidden bg-metly-black">
+        <div className="metly-container py-4 md:hidden bg-metly-black px-5 md:px-[30px]">
           <nav className="flex flex-col space-y-4">
             <Link
               to="/"
