@@ -45,7 +45,7 @@ const Index = () => {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://taxasaurus.com" />
         
-        {/* Add Montserrat font */}
+        {/* Add Montserrat font with correct weights */}
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet" />
         
         {/* Structured data */}
