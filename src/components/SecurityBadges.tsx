@@ -1,6 +1,7 @@
 
 import { Shield, Lock, CheckCircle, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { FileText } from "@/components/ui/fileText";
 
 const SecurityBadges = () => {
   return (
