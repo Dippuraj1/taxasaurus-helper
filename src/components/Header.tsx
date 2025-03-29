@@ -1,7 +1,18 @@
 
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-import { FileText, Home, User } from "lucide-react";
+import { FileText, Home, User, Calculator, Shield, MessageSquare, HelpCircle } from "lucide-react";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu";
+import { cn } from "@/lib/utils";
+import React from "react";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -14,26 +25,108 @@ const Header = () => {
           <span className="text-xl font-bold text-tax-primary">Taxasaurus</span>
         </div>
 
-        <nav className="hidden items-center space-x-6 md:flex">
-          <a href="#" className="text-sm font-medium text-gray-700 hover:text-tax-primary">
-            Home
-          </a>
-          <a href="#" className="text-sm font-medium text-gray-700 hover:text-tax-primary">
-            Features
-          </a>
-          <a href="#" className="text-sm font-medium text-gray-700 hover:text-tax-primary">
-            Pricing
-          </a>
-          <a href="#" className="text-sm font-medium text-gray-700 hover:text-tax-primary">
-            FAQs
-          </a>
-        </nav>
+        <NavigationMenu className="hidden md:flex">
+          <NavigationMenuList>
+            <NavigationMenuItem>
+              <NavigationMenuLink
+                href="/"
+                className={navigationMenuTriggerStyle()}
+              >
+                <Home className="mr-2 h-4 w-4" />
+                Home
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>Services</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                  <ListItem
+                    href="/tax-filing"
+                    title="AI Tax Filing"
+                    icon={<Calculator className="h-4 w-4" />}
+                  >
+                    Simplified tax filing with AI guidance
+                  </ListItem>
+                  <ListItem
+                    href="/document-storage"
+                    title="Document Storage"
+                    icon={<FileText className="h-4 w-4" />}
+                  >
+                    Secure document storage with Digilocker
+                  </ListItem>
+                  <ListItem
+                    href="/tax-chat"
+                    title="AI Tax Assistant"
+                    icon={<MessageSquare className="h-4 w-4" />}
+                  >
+                    Get answers to your tax questions instantly
+                  </ListItem>
+                  <ListItem
+                    href="/tax-optimization"
+                    title="Tax Optimization"
+                    icon={<Calculator className="h-4 w-4" />}
+                  >
+                    Maximize deductions and minimize tax liability
+                  </ListItem>
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>Resources</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                  <ListItem
+                    href="/help-center"
+                    title="Help Center"
+                    icon={<HelpCircle className="h-4 w-4" />}
+                  >
+                    Find answers to common questions
+                  </ListItem>
+                  <ListItem
+                    href="/tax-guides"
+                    title="Tax Guides"
+                    icon={<FileText className="h-4 w-4" />}
+                  >
+                    Comprehensive guides on tax filing
+                  </ListItem>
+                  <ListItem
+                    href="/security"
+                    title="Security"
+                    icon={<Shield className="h-4 w-4" />}
+                  >
+                    Learn about our security measures
+                  </ListItem>
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+
+            <NavigationMenuItem>
+              <NavigationMenuLink
+                href="/pricing"
+                className={navigationMenuTriggerStyle()}
+              >
+                Pricing
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+          </NavigationMenuList>
+        </NavigationMenu>
 
         <div className="flex items-center gap-3">
-          <Button variant="outline" size="sm" className="hidden md:inline-flex">
+          <Button 
+            variant="outline" 
+            size="sm" 
+            className="hidden md:inline-flex"
+            onClick={() => navigate("/signin")}
+          >
             Sign In
           </Button>
-          <Button size="sm" className="hidden bg-tax-primary hover:bg-tax-primary/90 md:inline-flex">
+          <Button 
+            size="sm" 
+            className="hidden bg-tax-primary hover:bg-tax-primary/90 md:inline-flex"
+            onClick={() => navigate("/signup")}
+          >
             Sign Up
           </Button>
           <Button variant="ghost" size="icon" className="md:hidden">
@@ -60,5 +153,37 @@ const Header = () => {
     </header>
   );
 };
+
+const ListItem = React.forwardRef<
+  React.ElementRef<"a">,
+  React.ComponentPropsWithoutRef<"a"> & { 
+    icon?: React.ReactNode;
+    title: string;
+  }
+>(({ className, title, children, icon, ...props }, ref) => {
+  return (
+    <li>
+      <NavigationMenuLink asChild>
+        <a
+          ref={ref}
+          className={cn(
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            className
+          )}
+          {...props}
+        >
+          <div className="flex items-center gap-2 text-sm font-medium leading-none">
+            {icon}
+            {title}
+          </div>
+          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+            {children}
+          </p>
+        </a>
+      </NavigationMenuLink>
+    </li>
+  );
+});
+ListItem.displayName = "ListItem";
 
 export default Header;
