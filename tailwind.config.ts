@@ -90,9 +90,10 @@ export default {
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			fontFamily: {
-				sans: ['Source Sans 3', 'sans-serif'],
+				sans: ['Montserrat', 'sans-serif'],
 				'roboto-condensed': ['Roboto Condensed', 'sans-serif'],
 				'source-sans': ['Source Sans 3', 'sans-serif'],
+				'montserrat': ['Montserrat', 'sans-serif'],
 			},
 			fontSize: {
 				'h1': ['60px', '1.1'],

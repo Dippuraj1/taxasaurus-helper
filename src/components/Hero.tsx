@@ -14,8 +14,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Form, FormField, FormItem, FormLabel, FormControl } from "@/components/ui/form";
-import { useForm } from "react-hook-form";
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -61,11 +59,19 @@ const Hero = () => {
   };
   
   return (
-    <section className="bg-metly-yellow py-8 md:py-12 lg:py-16 xl:py-20">
+    <section 
+      className="py-8 md:py-12 lg:py-16 xl:py-20 relative"
+      style={{
+        backgroundImage: `url('/lovable-uploads/5acf60b7-d300-45b9-a495-108ee1fd30f0.png')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
+    >
       <div className="container mx-auto px-4 sm:px-6 md:px-8">
         <div className="flex flex-col lg:flex-row lg:items-center lg:gap-8">
           {/* Text content - mobile first design */}
-          <div className="flex flex-col justify-center space-y-4 sm:space-y-5 lg:space-y-6 lg:w-3/5">
+          <div className="flex flex-col justify-center space-y-4 sm:space-y-5 lg:space-y-6 lg:w-3/5 z-10">
             <div className="space-y-2 sm:space-y-3">
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-h1 font-semibold tracking-tight text-metly-black">
                 An AI-Powered Smartest Tax Assistant
@@ -176,16 +182,8 @@ const Hero = () => {
             </div>
           </div>
           
-          {/* Image container with strict dimensions */}
-          <div className="mt-8 lg:mt-0 lg:w-2/5 flex justify-center lg:justify-end">
-            <div className="relative w-[280px] h-[280px] sm:w-[340px] sm:h-[340px] md:w-[450px] md:h-[450px] lg:w-[520px] lg:h-[520px] xl:w-[608px] xl:h-[608px]">
-              <img 
-                src="/lovable-uploads/d3de3271-65da-45f6-86a3-7a5b67306e10.png" 
-                alt="Lego figure with top hat and mustache" 
-                className="object-contain w-full h-full"
-              />
-            </div>
-          </div>
+          {/* Empty space to maintain layout where the image used to be */}
+          <div className="mt-8 lg:mt-0 lg:w-2/5 hidden lg:block"></div>
         </div>
       </div>
     </section>
