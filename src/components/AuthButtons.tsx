@@ -19,26 +19,26 @@ const AuthButtons = () => {
           <div className="space-y-3">
             <Button 
               className="w-full justify-center gap-2 bg-tax-primary hover:bg-tax-primary/90"
-              onClick={() => navigate("/signup")}
+              onClick={() => navigate("/auth")}
             >
               <User className="h-4 w-4" />
-              Sign Up with Email
+              Get Started
             </Button>
             <Button 
               variant="outline" 
               className="w-full justify-center gap-2"
-              onClick={() => navigate("/signup")}
+              onClick={() => navigate("/individual/signup")}
             >
-              <Mail className="h-4 w-4" />
-              Continue with Google
+              <User className="h-4 w-4" />
+              Sign Up as Individual
             </Button>
             <Button 
               variant="outline" 
               className="w-full justify-center gap-2"
-              onClick={() => navigate("/signup")}
+              onClick={() => navigate("/agency/signup")}
             >
               <FileText className="h-4 w-4" />
-              Sign In with PAN
+              Sign Up as Agency
             </Button>
           </div>
           <p className="text-center text-sm text-gray-500">
