@@ -33,27 +33,27 @@ const Hero = () => {
   };
   
   return (
-    <section className="bg-gradient-to-b from-white to-tax-lightBlue py-20">
+    <section className="bg-gradient-to-b from-white to-amber-50 py-20">
       <div className="container px-4 md:px-6">
-        <div className="flex flex-col lg:flex-row lg:items-center">
-          <div className="flex flex-col justify-center space-y-4 lg:w-2/3">
-            <div className="space-y-2">
+        <div className="flex flex-col lg:flex-row lg:items-center lg:gap-8">
+          <div className="flex flex-col justify-center space-y-6 lg:w-3/5">
+            <div className="space-y-4">
               <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">
-                Welcome to Your AI-Powered <span className="tax-gradient-text">Tax Assistant</span>
+                Welcome to Your AI-Powered <span className="text-amber-600">Tax Assistant</span>
               </h1>
-              <p className="max-w-[600px] text-gray-500 md:text-xl">
+              <p className="max-w-[600px] text-gray-600 md:text-xl">
                 Simplified tax filing with AI guidance. Save time, maximize refunds, and file with confidence.
               </p>
             </div>
-            <div className="flex flex-col gap-2 min-[400px]:flex-row">
+            <div className="flex flex-col gap-3 min-[400px]:flex-row">
               <Dialog>
                 <DialogTrigger asChild>
-                  <Button className="gap-1 bg-tax-primary hover:bg-tax-primary/90">
+                  <Button className="gap-1 bg-amber-500 hover:bg-amber-600 text-white">
                     <FileText className="h-4 w-4" />
                     Contact Us
                   </Button>
                 </DialogTrigger>
-                <DialogContent>
+                <DialogContent className="sm:max-w-md">
                   <DialogHeader>
                     <DialogTitle>Contact Us</DialogTitle>
                   </DialogHeader>
@@ -83,7 +83,7 @@ const Hero = () => {
                     </div>
                     <Button 
                       type="submit" 
-                      className="w-full bg-tax-primary hover:bg-tax-primary/90"
+                      className="w-full bg-amber-500 hover:bg-amber-600"
                     >
                       Submit
                     </Button>
@@ -92,7 +92,7 @@ const Hero = () => {
               </Dialog>
               <Button 
                 variant="outline" 
-                className="gap-1"
+                className="gap-1 border-amber-200 text-amber-700 hover:bg-amber-50"
                 onClick={() => navigate("/booking")}
               >
                 <MessageSquare className="h-4 w-4" />
@@ -101,17 +101,17 @@ const Hero = () => {
             </div>
           </div>
           
-          <div className="mt-8 lg:mt-0 lg:w-1/3">
-            <div className="space-y-4 w-full max-w-md">
+          <div className="mt-8 lg:mt-0 lg:w-2/5">
+            <div className="space-y-4 w-full max-w-md bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-sm border border-amber-100">
               <div className="space-y-2 text-center">
-                <h3 className="text-xl font-bold">Ready to Get Started?</h3>
-                <p className="text-gray-500">
+                <h3 className="text-xl font-bold text-amber-800">Ready to Get Started?</h3>
+                <p className="text-gray-600">
                   Create your account in seconds and start simplifying your tax filing
                 </p>
               </div>
               <div className="space-y-3">
                 <Button 
-                  className="w-full justify-center gap-2 bg-tax-primary hover:bg-tax-primary/90"
+                  className="w-full justify-center gap-2 bg-amber-500 hover:bg-amber-600"
                   onClick={() => navigate("/auth")}
                 >
                   Get Started
@@ -119,14 +119,14 @@ const Hero = () => {
                 <div className="flex gap-2">
                   <Button 
                     variant="outline" 
-                    className="flex-1 justify-center"
+                    className="flex-1 justify-center border-amber-200 text-amber-700 hover:bg-amber-50"
                     onClick={() => navigate("/individual/signup")}
                   >
                     Individual
                   </Button>
                   <Button 
                     variant="outline" 
-                    className="flex-1 justify-center"
+                    className="flex-1 justify-center border-amber-200 text-amber-700 hover:bg-amber-50"
                     onClick={() => navigate("/agency/signup")}
                   >
                     Agency
