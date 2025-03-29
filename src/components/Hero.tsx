@@ -62,7 +62,7 @@ const Hero = () => {
     <section 
       className="py-8 md:py-12 lg:py-16 xl:py-20 relative"
       style={{
-        backgroundImage: `url('/lovable-uploads/5acf60b7-d300-45b9-a495-108ee1fd30f0.png')`,
+        backgroundImage: `url('/lovable-uploads/24872857-0835-497e-8be6-a9ed8287cb3e.png')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
