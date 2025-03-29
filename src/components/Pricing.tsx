@@ -58,8 +58,8 @@ const Pricing = () => {
     <section id="pricing" className="bg-white py-16">
       <div className="container px-5 md:px-[30px]">
         <div className="mb-12 text-center">
-          <h2 className="mb-2 text-3xl font-bold md:text-4xl">Transparent Pricing</h2>
-          <p className="mx-auto max-w-[700px] text-gray-500 md:text-lg">
+          <h2 className="mb-2">Transparent Pricing</h2>
+          <p className="mx-auto max-w-[700px] text-gray-500">
             Pay only for what you use with no hidden fees or commitments. Choose the option that works best for you.
           </p>
         </div>
@@ -78,7 +78,7 @@ const Pricing = () => {
                 </div>
               )}
               <div className="mb-6">
-                <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
+                <h3 className="font-medium mb-2">{plan.name}</h3>
                 <p className="text-gray-500 mb-4">{plan.description}</p>
                 <div className="flex items-baseline mb-2">
                   <span className="text-3xl font-bold">{plan.price}</span>

@@ -52,8 +52,8 @@ const Features = () => {
     <section id="features" className="bg-metly-black py-16 text-white">
       <div className="metly-container px-5 md:px-[30px]">
         <div className="mb-12 text-center">
-          <h2 className="mb-2 text-3xl font-bold md:text-4xl">Why Choose Taxasaurus?</h2>
-          <p className="mx-auto max-w-[700px] text-gray-300 md:text-lg">
+          <h2 className="mb-2">Why Choose Taxasaurus?</h2>
+          <p className="mx-auto max-w-[700px] text-gray-300">
             Simplify your tax filing with our comprehensive suite of AI-powered tools.
           </p>
         </div>
@@ -64,7 +64,7 @@ const Features = () => {
               className="flex flex-col items-start space-y-3 bg-gray-900 rounded-2xl p-6 transition-transform duration-300 hover:transform hover:scale-105"
             >
               <div className="rounded-lg bg-gray-800 p-3">{feature.icon}</div>
-              <h3 className="text-xl font-bold text-white">{feature.title}</h3>
+              <h3 className="font-medium">{feature.title}</h3>
               <p className="text-gray-300">{feature.description}</p>
             </div>
           ))}

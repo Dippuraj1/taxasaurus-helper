@@ -90,11 +90,23 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground font-sans text-body;
   }
   
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-sans font-bold tracking-tight;
+  h1 {
+    @apply font-anton text-h1 font-normal tracking-tight;
+  }
+  
+  h2 {
+    @apply font-anton text-h2 font-normal tracking-tight;
+  }
+  
+  h3 {
+    @apply font-sans text-h3 font-medium tracking-tight;
+  }
+  
+  h4 {
+    @apply font-sans text-h4 font-medium tracking-tight;
   }
 }
 
@@ -133,3 +145,12 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Dark background text color */
+.bg-metly-black, .bg-gray-900 {
+  @apply text-white;
+}
+
+/* Light background text color */
+.bg-white, .bg-metly-yellow, .bg-tax-lightBlue, .bg-metly-beige, .bg-metly-lightPurple {
+  @apply text-gray-800;
+}
