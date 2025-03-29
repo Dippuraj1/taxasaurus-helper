@@ -1,10 +1,10 @@
 
 import { LucideProps } from 'lucide-react';
-import { forwardRef } from 'react';
+import React from 'react';
 
-export interface FileTextIconProps extends LucideProps {}
+export interface FileTextProps extends LucideProps {}
 
-const FileText = forwardRef<SVGSVGElement, FileTextIconProps>(
+const FileText = React.forwardRef<SVGSVGElement, FileTextProps>(
   ({ color = 'currentColor', size = 24, ...props }, ref) => {
     return (
       <svg
