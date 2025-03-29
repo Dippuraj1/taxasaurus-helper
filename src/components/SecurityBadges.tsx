@@ -1,83 +1,96 @@
 
-import { Shield, Lock, CheckCircle } from "lucide-react";
+import { Shield, Lock, CheckCircle, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const SecurityBadges = () => {
   return (
-    <section className="bg-tax-lightBlue py-12">
-      <div className="container px-4 md:px-6">
-        <div className="grid items-center gap-6 lg:grid-cols-2 lg:gap-12">
-          <div className="flex flex-col justify-center space-y-4">
-            <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-                Security & Compliance You Can Trust
-              </h2>
-              <p className="max-w-[600px] text-gray-500 md:text-xl">
-                Your data security is our top priority. We employ multiple layers of protection to ensure your financial information remains private and secure.
-              </p>
+    <section className="bg-white py-24">
+      <div className="container px-8 mx-auto">
+        <h2 className="text-3xl font-bold mb-12 text-slate-900 text-center">Partners who trust our platform</h2>
+        
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-center mb-20">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Samsung_Logo.svg" alt="Samsung" className="h-8 mx-auto opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" className="h-8 mx-auto opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" className="h-8 mx-auto opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg" alt="Meta" className="h-8 mx-auto opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" className="h-8 mx-auto opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Tesla_logo.png" alt="Tesla" className="h-8 mx-auto opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all" />
+        </div>
+        
+        <div className="text-center mb-24">
+          <h2 className="text-3xl font-bold mb-6 text-slate-900">We integrate with your current tech stack</h2>
+          <p className="text-lg text-slate-600 max-w-3xl mx-auto mb-12">
+            Our system integrates seamlessly with the tools you already use, making the transition smooth and efficient.
+          </p>
+          
+          <div className="flex flex-wrap justify-center gap-8">
+            <div className="p-4 bg-slate-50 rounded-full">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Xero_software_logo.svg" alt="Xero" className="h-8" />
             </div>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-2">
-                <CheckCircle className="mt-1 h-5 w-5 flex-shrink-0 text-tax-secondary" />
-                <div>
-                  <span className="font-medium">End-to-End Encryption:</span> All your data is protected with AES-256 encryption, the same standard used by banks.
-                </div>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle className="mt-1 h-5 w-5 flex-shrink-0 text-tax-secondary" />
-                <div>
-                  <span className="font-medium">Multi-Factor Authentication:</span> Additional security layer with OTP and device verification.
-                </div>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle className="mt-1 h-5 w-5 flex-shrink-0 text-tax-secondary" />
-                <div>
-                  <span className="font-medium">Regular Security Audits:</span> Our systems undergo continuous security testing and monitoring.
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div className="flex justify-center">
-            <div className="grid grid-cols-2 gap-4">
-              <div className="flex flex-col items-center justify-center space-y-2 rounded-lg border bg-white p-6 shadow-sm">
-                <Shield className="h-10 w-10 text-tax-primary" />
-                <h3 className="text-lg font-medium">GDPR Compliant</h3>
-                <p className="text-center text-sm text-gray-500">
-                  Full compliance with data protection regulations
-                </p>
-              </div>
-              <div className="flex flex-col items-center justify-center space-y-2 rounded-lg border bg-white p-6 shadow-sm">
-                <Lock className="h-10 w-10 text-tax-secondary" />
-                <h3 className="text-lg font-medium">DPDP Certified</h3>
-                <p className="text-center text-sm text-gray-500">
-                  Adheres to Data Protection and Privacy standards
-                </p>
-              </div>
-              <div className="col-span-2 flex flex-col items-center justify-center space-y-2 rounded-lg border bg-white p-6 shadow-sm">
-                <div className="flex items-center gap-2">
-                  <Shield className="h-6 w-6 text-tax-accent" />
-                  <Lock className="h-6 w-6 text-tax-primary" />
-                  <CheckCircle className="h-6 w-6 text-tax-secondary" />
-                </div>
-                <h3 className="text-lg font-medium">Government API Certified</h3>
-                <p className="text-center text-sm text-gray-500">
-                  Official integration with CBDT and Digilocker APIs
-                </p>
-              </div>
+            <div className="p-4 bg-slate-50 rounded-full">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Quickbooks_logo.svg" alt="QuickBooks" className="h-8" />
+            </div>
+            <div className="p-4 bg-slate-50 rounded-full">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Zoho_Corporation_logo.svg" alt="Zoho" className="h-8" />
+            </div>
+            <div className="p-4 bg-slate-50 rounded-full">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png" alt="Notion" className="h-8" />
+            </div>
+            <div className="p-4 bg-slate-50 rounded-full">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" alt="Figma" className="h-8" />
+            </div>
+            <div className="p-4 bg-slate-50 rounded-full">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Dropbox_Icon.svg" alt="Dropbox" className="h-8" />
             </div>
           </div>
         </div>
-        <div className="mt-12 flex flex-wrap items-center justify-center gap-6">
-          <div className="flex items-center gap-2 rounded-full border bg-white px-4 py-2 shadow-sm">
-            <Shield className="h-5 w-5 text-tax-primary" />
-            <span className="text-sm font-medium">100% Secure</span>
+        
+        <div className="mt-16">
+          <h2 className="text-3xl font-bold mb-12 text-slate-900 text-center">Discover the latest content from our resource hub</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div className="bg-pink-50 p-8 rounded-lg">
+              <div className="w-full h-40 bg-pink-200 rounded-lg mb-6 flex items-center justify-center">
+                <FileText className="w-16 h-16 text-pink-500" />
+              </div>
+              <h3 className="font-bold text-lg mb-2">Tax Form Advisor Field Manual</h3>
+              <p className="text-slate-600 mb-4">Essential guide for tax professionals</p>
+              <Button variant="link" className="group p-0 text-pink-600 hover:text-pink-700">
+                Download
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </div>
+            
+            <div className="bg-blue-50 p-8 rounded-lg">
+              <div className="w-full h-40 bg-blue-200 rounded-lg mb-6 flex items-center justify-center">
+                <FileText className="w-16 h-16 text-blue-500" />
+              </div>
+              <h3 className="font-bold text-lg mb-2">Monthly Tax Case Insights</h3>
+              <p className="text-slate-600 mb-4">Latest tax rulings and implications</p>
+              <Button variant="link" className="group p-0 text-blue-600 hover:text-blue-700">
+                Read more
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </div>
+            
+            <div className="bg-purple-50 p-8 rounded-lg">
+              <div className="w-full h-40 bg-purple-200 rounded-lg mb-6 flex items-center justify-center">
+                <FileText className="w-16 h-16 text-purple-500" />
+              </div>
+              <h3 className="font-bold text-lg mb-2">7 Steps to Build a Solid Tax Practice</h3>
+              <p className="text-slate-600 mb-4">Growth strategies for tax professionals</p>
+              <Button variant="link" className="group p-0 text-purple-600 hover:text-purple-700">
+                Download
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </div>
           </div>
-          <div className="flex items-center gap-2 rounded-full border bg-white px-4 py-2 shadow-sm">
-            <Lock className="h-5 w-5 text-tax-secondary" />
-            <span className="text-sm font-medium">End-to-End Encryption</span>
-          </div>
-          <div className="flex items-center gap-2 rounded-full border bg-white px-4 py-2 shadow-sm">
-            <CheckCircle className="h-5 w-5 text-tax-accent" />
-            <span className="text-sm font-medium">Government API Certified</span>
+          
+          <div className="text-center">
+            <Button variant="outline" className="group border-blue-200 text-blue-700 hover:bg-blue-50">
+              Browse all resources
+              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+            </Button>
           </div>
         </div>
       </div>

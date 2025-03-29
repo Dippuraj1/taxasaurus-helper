@@ -1,4 +1,6 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -90,7 +92,16 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
+  }
+  
+  html {
+    @apply scroll-smooth;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-inter font-bold;
   }
 }
 
@@ -100,10 +111,36 @@
   }
   
   .tax-gradient-text {
-    @apply bg-gradient-to-r from-tax-primary to-tax-secondary bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent;
   }
 
   .tax-glass-panel {
     @apply bg-white bg-opacity-80 backdrop-blur-md rounded-xl shadow-md;
+  }
+  
+  .container {
+    @apply px-8 md:px-10 lg:px-12;
+  }
+  
+  .section-padding {
+    @apply py-20;
+  }
+  
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-1;
+  }
+  
+  .feature-icon-box {
+    @apply p-3 rounded-lg bg-blue-50 inline-flex items-center justify-center text-blue-600;
+  }
+}
+
+@layer utilities {
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .text-balance {
+    text-wrap: balance;
   }
 }
