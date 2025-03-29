@@ -1,5 +1,5 @@
 
-import { FileText, Twitter, Facebook, Instagram, Linkedin } from "lucide-react";
+import { FileText, Twitter, Facebook, Instagram, Linkedin, Mail, Phone, MessageCircle } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -64,32 +64,31 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider">Resources</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <a href="#" className="text-gray-500 hover:text-tax-primary">
-                  Help Center
+            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider">Get in Touch</h3>
+            <ul className="space-y-3 text-sm">
+              <li className="flex items-center">
+                <Mail className="h-4 w-4 text-tax-primary mr-2" />
+                <a href="mailto:support@taxasaurus.in" className="text-gray-500 hover:text-tax-primary">
+                  support@taxasaurus.in
                 </a>
               </li>
-              <li>
-                <a href="#" className="text-gray-500 hover:text-tax-primary">
-                  Tax Guides
+              <li className="flex items-center">
+                <Phone className="h-4 w-4 text-tax-primary mr-2" />
+                <a href="tel:+919899123456" className="text-gray-500 hover:text-tax-primary">
+                  +91 9899 123 456
                 </a>
               </li>
-              <li>
-                <a href="#" className="text-gray-500 hover:text-tax-primary">
-                  API Documentation
+              <li className="flex items-center">
+                <MessageCircle className="h-4 w-4 text-tax-primary mr-2" />
+                <a href="https://wa.me/919899123456" className="text-gray-500 hover:text-tax-primary">
+                  WhatsApp Support
                 </a>
               </li>
-              <li>
-                <a href="#" className="text-gray-500 hover:text-tax-primary">
-                  FAQ
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-500 hover:text-tax-primary">
-                  Community
-                </a>
+              <li className="pt-2">
+                <p className="text-gray-500">
+                  123 Tax Street, Infotech Park<br />
+                  Bengaluru, Karnataka 560001
+                </p>
               </li>
             </ul>
           </div>

@@ -66,20 +66,6 @@ const SecurityBadges = () => {
             </div>
           </div>
         </div>
-        <div className="mt-12 flex flex-wrap items-center justify-center gap-6">
-          <div className="flex items-center gap-2 rounded-full border bg-white px-4 py-2 shadow-sm">
-            <Shield className="h-5 w-5 text-tax-primary" />
-            <span className="text-sm font-medium">100% Secure</span>
-          </div>
-          <div className="flex items-center gap-2 rounded-full border bg-white px-4 py-2 shadow-sm">
-            <Lock className="h-5 w-5 text-tax-secondary" />
-            <span className="text-sm font-medium">End-to-End Encryption</span>
-          </div>
-          <div className="flex items-center gap-2 rounded-full border bg-white px-4 py-2 shadow-sm">
-            <CheckCircle className="h-5 w-5 text-tax-accent" />
-            <span className="text-sm font-medium">Government API Certified</span>
-          </div>
-        </div>
       </div>
     </section>
   );

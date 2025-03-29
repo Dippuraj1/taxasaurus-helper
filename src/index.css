@@ -102,11 +102,11 @@
   }
   
   h3 {
-    @apply font-anton text-h3 font-normal tracking-tight;
+    @apply font-anton text-h3 font-light tracking-tight;
   }
   
   h4 {
-    @apply font-sans text-h4 font-medium tracking-tight;
+    @apply font-mulish text-h4 font-medium tracking-tight;
   }
 }
 

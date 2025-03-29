@@ -3,14 +3,16 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Check, Mail, MapPin, Phone } from "lucide-react";
+import { Check, Mail, MapPin, Phone, MessageCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { Card, CardContent } from "@/components/ui/card";
 
 const Contact = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    whatsapp: "",
     subject: "",
     message: "",
   });
@@ -39,6 +41,7 @@ const Contact = () => {
       setFormData({
         name: "",
         email: "",
+        whatsapp: "",
         subject: "",
         message: "",
       });
@@ -56,70 +59,85 @@ const Contact = () => {
         </div>
         
         <div className="grid gap-10 lg:grid-cols-2">
-          <div>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-                <Input
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  placeholder="Your name"
-                  required
-                  className="w-full"
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="your@email.com"
-                  required
-                  className="w-full"
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">Subject</label>
-                <Input
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  placeholder="What is this regarding?"
-                  required
-                  className="w-full"
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                <Textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  placeholder="How can we help you?"
-                  required
-                  className="min-h-[150px] w-full"
-                />
-              </div>
-              
-              <Button 
-                type="submit" 
-                className="w-full bg-tax-primary hover:bg-tax-primary/90"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? "Sending..." : "Send Message"}
-              </Button>
-            </form>
-          </div>
+          <Card className="overflow-hidden">
+            <CardContent className="p-6">
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                  <Input
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="Your name"
+                    required
+                    className="w-full"
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="your@email.com"
+                    required
+                    className="w-full"
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="whatsapp" className="block text-sm font-medium text-gray-700 mb-1">WhatsApp</label>
+                  <Input
+                    id="whatsapp"
+                    name="whatsapp"
+                    type="tel"
+                    value={formData.whatsapp}
+                    onChange={handleChange}
+                    placeholder="Your WhatsApp number"
+                    className="w-full"
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                  <Input
+                    id="subject"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    placeholder="What is this regarding?"
+                    required
+                    className="w-full"
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="How can we help you?"
+                    required
+                    className="min-h-[150px] w-full"
+                  />
+                </div>
+                
+                <Button 
+                  type="submit" 
+                  className="w-full bg-tax-primary hover:bg-tax-primary/90"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? "Sending..." : "Send Message"}
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
           
           <div className="space-y-8">
             <div>
@@ -141,6 +159,16 @@ const Contact = () => {
                   <div>
                     <h4 className="font-semibold">Phone</h4>
                     <a href="tel:+919899123456" className="text-gray-500 hover:text-tax-primary">
+                      +91 9899 123 456
+                    </a>
+                  </div>
+                </div>
+                
+                <div className="flex items-start">
+                  <MessageCircle className="h-5 w-5 text-tax-primary mr-3" />
+                  <div>
+                    <h4 className="font-semibold">WhatsApp</h4>
+                    <a href="https://wa.me/919899123456" className="text-gray-500 hover:text-tax-primary">
                       +91 9899 123 456
                     </a>
                   </div>

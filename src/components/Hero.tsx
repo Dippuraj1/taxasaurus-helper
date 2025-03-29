@@ -4,6 +4,15 @@ import { ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { 
+  Dialog, 
+  DialogContent, 
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -11,9 +20,14 @@ const Hero = () => {
   const [contactForm, setContactForm] = useState({
     name: "",
     email: "",
+    whatsapp: "",
+    subject: "",
+    message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [dialogOpen, setDialogOpen] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setContactForm({
       ...contactForm,
       [e.target.name]: e.target.value,
@@ -22,11 +36,24 @@ const Hero = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Contact request submitted",
-      description: "We'll get back to you as soon as possible.",
-    });
-    setContactForm({ name: "", email: "" });
+    setIsSubmitting(true);
+    
+    // Simulate form submission
+    setTimeout(() => {
+      setIsSubmitting(false);
+      toast({
+        title: "Contact request submitted",
+        description: "We'll get back to you as soon as possible.",
+      });
+      setContactForm({ 
+        name: "", 
+        email: "", 
+        whatsapp: "",
+        subject: "",
+        message: ""
+      });
+      setDialogOpen(false);
+    }, 1500);
   };
   
   return (
@@ -43,13 +70,92 @@ const Hero = () => {
               </p>
             </div>
             <div className="flex flex-col gap-3 min-[400px]:flex-row">
-              <Button 
-                className="gap-1 bg-metly-black text-white hover:bg-metly-black/90 rounded-full"
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                Contact Us
-                <ArrowRight className="h-4 w-4 ml-1" />
-              </Button>
+              <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
+                <DialogTrigger asChild>
+                  <Button 
+                    className="gap-1 bg-metly-black text-white hover:bg-metly-black/90 rounded-full transform hover:scale-105 transition-all shadow-lg"
+                  >
+                    Contact Us
+                    <ArrowRight className="h-4 w-4 ml-1" />
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-[425px]">
+                  <DialogHeader>
+                    <DialogTitle>Contact Us</DialogTitle>
+                  </DialogHeader>
+                  <form onSubmit={handleSubmit} className="space-y-4 pt-4">
+                    <div>
+                      <label htmlFor="popup-name" className="text-sm font-medium">Full Name</label>
+                      <Input
+                        id="popup-name"
+                        name="name"
+                        value={contactForm.name}
+                        onChange={handleChange}
+                        placeholder="Your name"
+                        required
+                      />
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="popup-email" className="text-sm font-medium">Email Address</label>
+                      <Input
+                        id="popup-email"
+                        name="email"
+                        type="email"
+                        value={contactForm.email}
+                        onChange={handleChange}
+                        placeholder="your@email.com"
+                        required
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="popup-whatsapp" className="text-sm font-medium">WhatsApp</label>
+                      <Input
+                        id="popup-whatsapp"
+                        name="whatsapp"
+                        type="tel"
+                        value={contactForm.whatsapp}
+                        onChange={handleChange}
+                        placeholder="Your WhatsApp number"
+                      />
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="popup-subject" className="text-sm font-medium">Subject</label>
+                      <Input
+                        id="popup-subject"
+                        name="subject"
+                        value={contactForm.subject}
+                        onChange={handleChange}
+                        placeholder="What is this regarding?"
+                        required
+                      />
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="popup-message" className="text-sm font-medium">Message</label>
+                      <Textarea
+                        id="popup-message"
+                        name="message"
+                        value={contactForm.message}
+                        onChange={handleChange}
+                        placeholder="How can we help you?"
+                        required
+                      />
+                    </div>
+                    
+                    <Button 
+                      type="submit" 
+                      className="w-full"
+                      disabled={isSubmitting}
+                    >
+                      {isSubmitting ? "Sending..." : "Send Message"}
+                    </Button>
+                  </form>
+                </DialogContent>
+              </Dialog>
+              
               <Button 
                 className="gap-1 bg-white text-metly-black hover:bg-white/90 rounded-full border border-metly-black"
                 onClick={() => navigate("/booking")}
@@ -62,9 +168,9 @@ const Hero = () => {
           
           <div className="mt-8 lg:mt-0 lg:w-2/5 relative">
             <img 
-              src="/lovable-uploads/18c87cec-6660-4194-94a9-2ef78178ba73.png" 
-              alt="Business professional with stylish yellow glasses" 
-              className="rounded-full object-cover w-full max-w-md mx-auto"
+              src="/lovable-uploads/6391989a-e11a-4965-9132-5cd2cd8cd66b.png" 
+              alt="Lego figure with top hat and mustache" 
+              className="object-contain w-full max-w-md mx-auto"
             />
           </div>
         </div>
