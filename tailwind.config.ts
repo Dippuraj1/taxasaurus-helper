@@ -90,8 +90,9 @@ export default {
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			fontFamily: {
-				sans: ['Source Sans 3', 'sans-serif'],
+				sans: ['Quicksand', 'sans-serif'],
 				anton: ['Anton', 'sans-serif'],
+				quicksand: ['Quicksand', 'sans-serif'],
 			},
 			fontSize: {
 				'h1': ['54px', '1.1'],

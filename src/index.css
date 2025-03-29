@@ -102,11 +102,11 @@
   }
   
   h3 {
-    @apply font-sans text-h3 font-medium tracking-tight;
+    @apply font-quicksand text-h3 font-medium tracking-tight;
   }
   
   h4 {
-    @apply font-sans text-h4 font-medium tracking-tight;
+    @apply font-quicksand text-h4 font-medium tracking-tight;
   }
 }
 
