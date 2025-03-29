@@ -5,7 +5,9 @@ import Hero from "@/components/Hero";
 import Features from "@/components/Features";
 import SecurityBadges from "@/components/SecurityBadges";
 import Pricing from "@/components/Pricing";
+import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
+import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
 import ChatbotButton from "@/components/ChatbotButton";
 
@@ -54,7 +56,9 @@ const Index = () => {
         <Features />
         <SecurityBadges />
         <Pricing />
+        <Testimonials />
         <Contact />
+        <Newsletter />
       </main>
       <Footer />
       <ChatbotButton />

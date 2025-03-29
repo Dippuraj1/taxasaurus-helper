@@ -94,19 +94,19 @@
   }
   
   h1 {
-    @apply font-anton text-h1 font-normal tracking-tight;
+    @apply font-roboto-condensed text-h1 font-semibold tracking-tight;
   }
   
   h2 {
-    @apply font-anton text-h2 font-normal tracking-tight;
+    @apply font-roboto-condensed text-h2 font-medium tracking-tight;
   }
   
   h3 {
-    @apply font-anton text-h3 font-light tracking-tight;
+    @apply font-roboto-condensed text-h3 font-normal tracking-tight;
   }
   
   h4 {
-    @apply font-mulish text-h4 font-medium tracking-tight;
+    @apply font-source-sans text-h4 font-medium tracking-tight;
   }
 }
 

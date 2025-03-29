@@ -90,16 +90,16 @@ export default {
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			fontFamily: {
-				sans: ['Mulish', 'sans-serif'],
-				anton: ['Anton', 'sans-serif'],
-				mulish: ['Mulish', 'sans-serif'],
+				sans: ['Source Sans 3', 'sans-serif'],
+				'roboto-condensed': ['Roboto Condensed', 'sans-serif'],
+				'source-sans': ['Source Sans 3', 'sans-serif'],
 			},
 			fontSize: {
 				'h1': ['60px', '1.1'],
 				'h2': ['42px', '1.2'],
 				'h3': ['30px', '1.3'],
-				'h4': ['22px', '1.4'],
-				'body': ['16px', '1.5'],
+				'h4': ['20px', '1.4'],
+				'body': ['14px', '1.5'],
 			},
 			keyframes: {
 				'accordion-down': {

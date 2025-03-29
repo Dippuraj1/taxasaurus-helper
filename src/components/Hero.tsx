@@ -62,7 +62,7 @@ const Hero = () => {
         <div className="flex flex-col lg:flex-row lg:items-center lg:gap-8">
           <div className="flex flex-col justify-center space-y-6 lg:w-3/5">
             <div className="space-y-2">
-              <h1 className="text-h1 font-anton font-normal tracking-tight text-metly-black">
+              <h1 className="text-h1 font-semibold tracking-tight text-metly-black">
                 An AI-Powered Smartest Tax Assistant
               </h1>
               <p className="text-xl md:text-2xl font-medium text-metly-black/80 mt-2">
@@ -166,12 +166,14 @@ const Hero = () => {
             </div>
           </div>
           
-          <div className="mt-8 lg:mt-0 lg:w-2/5 relative">
-            <img 
-              src="/lovable-uploads/6391989a-e11a-4965-9132-5cd2cd8cd66b.png" 
-              alt="Lego figure with top hat and mustache" 
-              className="object-contain w-full max-w-md mx-auto"
-            />
+          <div className="mt-8 lg:mt-0 lg:w-2/5 relative h-full flex items-end">
+            <div className="h-[75%] w-full flex items-end">
+              <img 
+                src="/lovable-uploads/6391989a-e11a-4965-9132-5cd2cd8cd66b.png" 
+                alt="Lego figure with top hat and mustache" 
+                className="object-contain w-full max-w-md mx-auto"
+              />
+            </div>
           </div>
         </div>
       </div>

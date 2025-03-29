@@ -1,11 +1,9 @@
 
 import {
   Bot,
-  Lock,
   FileText,
   BarChart4,
   Upload,
-  Shield,
 } from "lucide-react";
 
 const Features = () => {
@@ -15,12 +13,6 @@ const Features = () => {
       title: "AI-Powered Filing",
       description:
         "Our Claude AI assistant guides you through every step of the tax filing process.",
-    },
-    {
-      icon: <Shield className="h-8 w-8 text-metly-yellow" />,
-      title: "100% Secure",
-      description:
-        "End-to-end encryption and compliance with GDPR & DPDP standards.",
     },
     {
       icon: <FileText className="h-8 w-8 text-metly-yellow" />,
@@ -40,12 +32,6 @@ const Features = () => {
       description:
         "Secure storage of all your tax-related documents with Digilocker integration.",
     },
-    {
-      icon: <Lock className="h-8 w-8 text-metly-yellow" />,
-      title: "Government Certified",
-      description:
-        "Authorized integration with official CBDT APIs for direct filing.",
-    },
   ];
 
   return (
@@ -57,7 +43,7 @@ const Features = () => {
             Simplify your tax filing with our comprehensive suite of AI-powered tools.
           </p>
         </div>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
           {features.map((feature, index) => (
             <div
               key={index}
