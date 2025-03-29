@@ -49,7 +49,7 @@ const Features = () => {
   ];
 
   return (
-    <section className="bg-white py-16">
+    <section id="features" className="bg-white py-16">
       <div className="container px-4 md:px-6">
         <div className="mb-12 text-center">
           <h2 className="mb-2 text-3xl font-bold md:text-4xl">Why Choose Taxasaurus?</h2>

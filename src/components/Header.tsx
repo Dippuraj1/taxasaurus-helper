@@ -8,6 +8,14 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
 
+  const scrollToSection = (id: string) => {
+    setMobileMenuOpen(false);
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white">
       <div className="container flex h-16 items-center justify-between px-4 md:px-6">
@@ -22,18 +30,36 @@ const Header = () => {
           <Link to="/" className="text-sm font-medium hover:text-tax-primary">
             Home
           </Link>
-          <Link to="/features" className="text-sm font-medium hover:text-tax-primary">
+          <a 
+            href="#features" 
+            className="text-sm font-medium hover:text-tax-primary cursor-pointer"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection('features');
+            }}
+          >
             Features
-          </Link>
-          <Link to="/pricing" className="text-sm font-medium hover:text-tax-primary">
+          </a>
+          <a 
+            href="#pricing" 
+            className="text-sm font-medium hover:text-tax-primary cursor-pointer"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection('pricing');
+            }}
+          >
             Pricing
-          </Link>
-          <Link to="/about" className="text-sm font-medium hover:text-tax-primary">
-            About Us
-          </Link>
-          <Link to="/contact" className="text-sm font-medium hover:text-tax-primary">
+          </a>
+          <a 
+            href="#contact" 
+            className="text-sm font-medium hover:text-tax-primary cursor-pointer"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection('contact');
+            }}
+          >
             Contact
-          </Link>
+          </a>
         </nav>
         
         <div className="hidden md:flex md:items-center md:gap-4">
@@ -70,34 +96,36 @@ const Header = () => {
             >
               Home
             </Link>
-            <Link
-              to="/features"
+            <a
+              href="#features"
               className="text-sm font-medium hover:text-tax-primary"
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('features');
+              }}
             >
               Features
-            </Link>
-            <Link
-              to="/pricing"
+            </a>
+            <a
+              href="#pricing"
               className="text-sm font-medium hover:text-tax-primary"
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('pricing');
+              }}
             >
               Pricing
-            </Link>
-            <Link
-              to="/about"
+            </a>
+            <a
+              href="#contact"
               className="text-sm font-medium hover:text-tax-primary"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              About Us
-            </Link>
-            <Link
-              to="/contact"
-              className="text-sm font-medium hover:text-tax-primary"
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('contact');
+              }}
             >
               Contact
-            </Link>
+            </a>
             <div className="flex flex-col gap-2 pt-4">
               <Button 
                 variant="ghost" 
