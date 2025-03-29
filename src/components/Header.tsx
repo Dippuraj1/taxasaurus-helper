@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { FileText, Menu, X, Download } from "lucide-react";
+import { FileText, Menu, X, UserPlus } from "lucide-react";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -70,7 +70,7 @@ const Header = () => {
             className="bg-metly-yellow text-metly-black hover:bg-metly-yellow/90 rounded-full" 
             onClick={() => navigate("/auth")}
           >
-            <Download className="mr-2 h-4 w-4" /> Download App
+            <UserPlus className="mr-2 h-4 w-4" /> Sign Up
           </Button>
         </div>
         
@@ -147,7 +147,7 @@ const Header = () => {
                   navigate("/auth");
                 }}
               >
-                <Download className="mr-2 h-4 w-4" /> Download App
+                <UserPlus className="mr-2 h-4 w-4" /> Sign Up
               </Button>
             </div>
           </nav>
