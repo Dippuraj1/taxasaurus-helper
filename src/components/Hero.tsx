@@ -4,7 +4,6 @@ import { ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
-import { useIsMobile } from "@/hooks/use-mobile";
 import { 
   Dialog, 
   DialogContent, 
@@ -14,11 +13,13 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { Form, FormField, FormItem, FormLabel, FormControl } from "@/components/ui/form";
+import { useForm } from "react-hook-form";
 
 const Hero = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
-  const isMobile = useIsMobile();
   
   const [contactForm, setContactForm] = useState({
     name: "",
@@ -60,16 +61,16 @@ const Hero = () => {
   };
   
   return (
-    <section className="bg-metly-yellow py-8 md:py-12 lg:py-20">
-      <div className="metly-container px-4 sm:px-5 md:px-[30px]">
+    <section className="bg-metly-yellow py-8 md:py-12 lg:py-16 xl:py-20">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8">
         <div className="flex flex-col lg:flex-row lg:items-center lg:gap-8">
           {/* Text content - mobile first design */}
-          <div className="flex flex-col justify-center space-y-4 sm:space-y-6 lg:w-3/5">
-            <div className="space-y-2">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-h1 font-semibold tracking-tight text-metly-black">
+          <div className="flex flex-col justify-center space-y-4 sm:space-y-5 lg:space-y-6 lg:w-3/5">
+            <div className="space-y-2 sm:space-y-3">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-h1 font-semibold tracking-tight text-metly-black">
                 An AI-Powered Smartest Tax Assistant
               </h1>
-              <p className="text-lg sm:text-xl md:text-2xl font-medium text-metly-black/80 mt-2">
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-metly-black/80 mt-2">
                 File Taxes 90% Faster - Zero Stress, Maximum Security
               </p>
             </div>
@@ -77,7 +78,7 @@ const Hero = () => {
               <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
                 <DialogTrigger asChild>
                   <Button 
-                    className="gap-1 bg-metly-black text-white hover:bg-metly-black/90 rounded-full transform hover:scale-105 transition-all shadow-lg"
+                    className="gap-1 bg-metly-black text-white hover:bg-metly-black/90 rounded-full transform hover:scale-105 transition-all shadow-lg w-full sm:w-auto"
                   >
                     Contact Us
                     <ArrowRight className="h-4 w-4 ml-1" />
@@ -89,7 +90,7 @@ const Hero = () => {
                   </DialogHeader>
                   <form onSubmit={handleSubmit} className="space-y-4 pt-4">
                     <div>
-                      <label htmlFor="popup-name" className="text-sm font-medium">Full Name</label>
+                      <Label htmlFor="popup-name" className="text-sm font-medium">Full Name</Label>
                       <Input
                         id="popup-name"
                         name="name"
@@ -97,11 +98,12 @@ const Hero = () => {
                         onChange={handleChange}
                         placeholder="Your name"
                         required
+                        className="mt-1"
                       />
                     </div>
                     
                     <div>
-                      <label htmlFor="popup-email" className="text-sm font-medium">Email Address</label>
+                      <Label htmlFor="popup-email" className="text-sm font-medium">Email Address</Label>
                       <Input
                         id="popup-email"
                         name="email"
@@ -110,11 +112,12 @@ const Hero = () => {
                         onChange={handleChange}
                         placeholder="your@email.com"
                         required
+                        className="mt-1"
                       />
                     </div>
 
                     <div>
-                      <label htmlFor="popup-whatsapp" className="text-sm font-medium">WhatsApp</label>
+                      <Label htmlFor="popup-whatsapp" className="text-sm font-medium">WhatsApp</Label>
                       <Input
                         id="popup-whatsapp"
                         name="whatsapp"
@@ -122,11 +125,12 @@ const Hero = () => {
                         value={contactForm.whatsapp}
                         onChange={handleChange}
                         placeholder="Your WhatsApp number"
+                        className="mt-1"
                       />
                     </div>
                     
                     <div>
-                      <label htmlFor="popup-subject" className="text-sm font-medium">Subject</label>
+                      <Label htmlFor="popup-subject" className="text-sm font-medium">Subject</Label>
                       <Input
                         id="popup-subject"
                         name="subject"
@@ -134,11 +138,12 @@ const Hero = () => {
                         onChange={handleChange}
                         placeholder="What is this regarding?"
                         required
+                        className="mt-1"
                       />
                     </div>
                     
                     <div>
-                      <label htmlFor="popup-message" className="text-sm font-medium">Message</label>
+                      <Label htmlFor="popup-message" className="text-sm font-medium">Message</Label>
                       <Textarea
                         id="popup-message"
                         name="message"
@@ -146,6 +151,7 @@ const Hero = () => {
                         onChange={handleChange}
                         placeholder="How can we help you?"
                         required
+                        className="mt-1"
                       />
                     </div>
                     
@@ -161,7 +167,7 @@ const Hero = () => {
               </Dialog>
               
               <Button 
-                className="gap-1 bg-white text-metly-black hover:bg-white/90 rounded-full border border-metly-black"
+                className="gap-1 bg-white text-metly-black hover:bg-white/90 rounded-full border border-metly-black w-full sm:w-auto"
                 onClick={() => navigate("/booking")}
               >
                 Book an Appointment
@@ -170,9 +176,9 @@ const Hero = () => {
             </div>
           </div>
           
-          {/* Image container with fixed size */}
+          {/* Image container with strict dimensions */}
           <div className="mt-8 lg:mt-0 lg:w-2/5 flex justify-center lg:justify-end">
-            <div className="relative w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] lg:w-[608px] lg:h-[608px]">
+            <div className="relative w-[280px] h-[280px] sm:w-[340px] sm:h-[340px] md:w-[450px] md:h-[450px] lg:w-[520px] lg:h-[520px] xl:w-[608px] xl:h-[608px]">
               <img 
                 src="/lovable-uploads/d3de3271-65da-45f6-86a3-7a5b67306e10.png" 
                 alt="Lego figure with top hat and mustache" 

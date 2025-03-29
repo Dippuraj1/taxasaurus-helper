@@ -33,7 +33,7 @@ const Index = () => {
   };
 
   return (
-    <div className="flex min-h-screen flex-col bg-metly-black text-white">
+    <div className="flex min-h-screen flex-col bg-white text-metly-black">
       <Helmet>
         <title>Taxasaurus - AI-Powered Tax Filing Solution</title>
         <meta name="description" content="Simplify your tax filing with Taxasaurus - the AI-powered tax assistant that helps maximize returns and ensure compliance." />
